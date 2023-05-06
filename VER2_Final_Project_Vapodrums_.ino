@@ -176,8 +176,6 @@ void loop() {
 
   screenDisplay();
 
-  checkCircles();
-  drawCircles();
 
 }
 
@@ -270,8 +268,9 @@ void screenDisplay(void) {
   display.setTextColor(BLACK, WHITE);
   display.print(F("instr "));
   display.setTextColor(WHITE);
-  display.print(F("..*// "));  
+  display.print(F("..*// "));
 
+  //display channel when selected//
   display.setTextSize(2);
   display.setCursor(0, 45);
   display.setTextColor(WHITE);
@@ -320,7 +319,8 @@ void screenDisplay(void) {
       circlesFilled[i] = false;
     }
   }
-
+  
+ //draw circles//
   for (int i = 0; i < 16; i++) {
     if (circlesFilled[i] == true) {
       display.fillCircle((i + 1) * 7, 20, 2, WHITE);
@@ -329,21 +329,6 @@ void screenDisplay(void) {
     }
   }
 
-  //  display.drawCircle(10, 20, 5, WHITE);
-  //  display.drawCircle(20, 20, 5, WHITE);
-  //  display.drawCircle(30, 20, 5, WHITE);
-  //  display.drawCircle(40, 20, 5, WHITE);
-
-
   display.display();
   delay(100 );
-}
-
-void drawCircles() {
-
-}
-
-void checkCircles() {
-
-
 }
